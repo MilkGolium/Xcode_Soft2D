@@ -1,6 +1,4 @@
 #include "MyEngine.h"
-#include <cstdlib> // 用于 rand()
-#include <ctime>   // 用于 srand()
 
 int main(void) {
     InitWindow(640, 480, "Hello");
