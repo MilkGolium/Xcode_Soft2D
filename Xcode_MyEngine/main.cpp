@@ -6,7 +6,7 @@ int main(void) {
     
     while (GameShouldQuit()) {
         UpdateDeltaTime();
-        // Draw
+        // Draw here
         Rend();
     }
     CleanUp();
