@@ -28,6 +28,7 @@
 		456A3B442F1E22AA0009DC17 /* SDL3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDL3.xcframework; sourceTree = "<group>"; };
 		45DDA3A12F1F8C73006880AF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45DDA3A82F1FB34B006880AF /* random_line_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = random_line_test.cpp; sourceTree = "<group>"; };
+		45DDA3AA2F1FC244006880AF /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -58,6 +59,7 @@
 				456A3B3B2F1E21C30009DC17 /* Products */,
 				456A3B442F1E22AA0009DC17 /* SDL3.xcframework */,
 				45DDA3A12F1F8C73006880AF /* README.md */,
+				45DDA3AA2F1FC244006880AF /* LICENSE.txt */,
 			);
 			sourceTree = "<group>";
 		};
