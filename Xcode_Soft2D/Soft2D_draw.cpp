@@ -16,7 +16,7 @@
 
 #include <iostream>
 #include <SDL3/SDL.h>
-#include "MyEngine.h"
+#include "Soft2D.h"
 
 // 画点函数
 // 注意：Color类型已经在头文件里面定义，不在这个文件中。

@@ -1,4 +1,4 @@
-#include "MyEngine.h"
+#include "Soft2D.h"
 
 int main(void) {
     InitWindow(640, 480, "Window name");

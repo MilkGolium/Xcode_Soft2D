@@ -41,6 +41,7 @@
 */
 
 #include <SDL3/SDL.h>
+#include "Soft2D.h"
 
 // 静态全局变量，仅限本文件访问
 static uint64_t last_now = 0;

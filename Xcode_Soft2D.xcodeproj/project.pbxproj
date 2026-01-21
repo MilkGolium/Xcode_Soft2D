@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		456A3B452F1E22AA0009DC17 /* SDL3.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 456A3B442F1E22AA0009DC17 /* SDL3.xcframework */; };
-		45DDA3A92F1FB34B006880AF /* random_line_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45DDA3A82F1FB34B006880AF /* random_line_test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		456A3B3A2F1E21C30009DC17 /* Xcode_MyEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xcode_MyEngine; sourceTree = BUILT_PRODUCTS_DIR; };
+		456A3B3A2F1E21C30009DC17 /* Xcode_Soft2D */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Xcode_Soft2D; sourceTree = BUILT_PRODUCTS_DIR; };
 		456A3B442F1E22AA0009DC17 /* SDL3.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SDL3.xcframework; sourceTree = "<group>"; };
 		45DDA3A12F1F8C73006880AF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		45DDA3A82F1FB34B006880AF /* random_line_test.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = random_line_test.cpp; sourceTree = "<group>"; };
@@ -32,9 +31,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		456A3B3C2F1E21C30009DC17 /* Xcode_MyEngine */ = {
+		456A3B3C2F1E21C30009DC17 /* Xcode_Soft2D */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Xcode_MyEngine;
+			path = Xcode_Soft2D;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -55,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				45DDA3A72F1FB329006880AF /* Example_Code */,
-				456A3B3C2F1E21C30009DC17 /* Xcode_MyEngine */,
+				456A3B3C2F1E21C30009DC17 /* Xcode_Soft2D */,
 				456A3B3B2F1E21C30009DC17 /* Products */,
 				456A3B442F1E22AA0009DC17 /* SDL3.xcframework */,
 				45DDA3A12F1F8C73006880AF /* README.md */,
@@ -66,7 +65,7 @@
 		456A3B3B2F1E21C30009DC17 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				456A3B3A2F1E21C30009DC17 /* Xcode_MyEngine */,
+				456A3B3A2F1E21C30009DC17 /* Xcode_Soft2D */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		456A3B392F1E21C30009DC17 /* Xcode_MyEngine */ = {
+		456A3B392F1E21C30009DC17 /* Xcode_Soft2D */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 456A3B412F1E21C30009DC17 /* Build configuration list for PBXNativeTarget "Xcode_MyEngine" */;
+			buildConfigurationList = 456A3B412F1E21C30009DC17 /* Build configuration list for PBXNativeTarget "Xcode_Soft2D" */;
 			buildPhases = (
 				456A3B362F1E21C30009DC17 /* Sources */,
 				456A3B372F1E21C30009DC17 /* Frameworks */,
@@ -95,13 +94,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				456A3B3C2F1E21C30009DC17 /* Xcode_MyEngine */,
+				456A3B3C2F1E21C30009DC17 /* Xcode_Soft2D */,
 			);
-			name = Xcode_MyEngine;
+			name = Xcode_Soft2D;
 			packageProductDependencies = (
 			);
 			productName = Xcode_MyEngine;
-			productReference = 456A3B3A2F1E21C30009DC17 /* Xcode_MyEngine */;
+			productReference = 456A3B3A2F1E21C30009DC17 /* Xcode_Soft2D */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 456A3B352F1E21C30009DC17 /* Build configuration list for PBXProject "Xcode_MyEngine" */;
+			buildConfigurationList = 456A3B352F1E21C30009DC17 /* Build configuration list for PBXProject "Xcode_Soft2D" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -132,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				456A3B392F1E21C30009DC17 /* Xcode_MyEngine */,
+				456A3B392F1E21C30009DC17 /* Xcode_Soft2D */,
 			);
 		};
 /* End PBXProject section */
@@ -142,7 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45DDA3A92F1FB34B006880AF /* random_line_test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +281,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		456A3B352F1E21C30009DC17 /* Build configuration list for PBXProject "Xcode_MyEngine" */ = {
+		456A3B352F1E21C30009DC17 /* Build configuration list for PBXProject "Xcode_Soft2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				456A3B3F2F1E21C30009DC17 /* Debug */,
@@ -292,7 +290,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		456A3B412F1E21C30009DC17 /* Build configuration list for PBXNativeTarget "Xcode_MyEngine" */ = {
+		456A3B412F1E21C30009DC17 /* Build configuration list for PBXNativeTarget "Xcode_Soft2D" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				456A3B422F1E21C30009DC17 /* Debug */,

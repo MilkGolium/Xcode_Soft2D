@@ -16,6 +16,7 @@
 
 #include <iostream> // 用于显示报错信息
 #include <SDL3/SDL.h>
+#include "Soft2D.h"
 // #include <MyEngine.h>
 //#include <vector> // 为什么把它注释掉也能用Vector数组？
 
