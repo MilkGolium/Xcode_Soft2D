@@ -61,6 +61,10 @@ void DrawFilledCircle(int centerX, int centerY, int radius, Color c);
 void DrawRect(int x, int y, int w, int h, Color c);
 // 空心圆
 void DrawCircle(int centerX, int centerY, int radius, Color c);
+// 彩色清屏（准确说叫颜色填充）
+void FillScreen(Color c);
+// 速度更快的memset清屏，只支持黑色，数组全填充成0
+void ClearScreen(void);
 
 // Time ==============================================================================
 void InitEngineTime(void); // 在主循环开始前调用一次，初始化时间基准
@@ -69,7 +73,3 @@ float GetDeltaTime(void); // 获取上一帧的时间
 void SetTargetFPS(int fps); // 设置帧率
 // 你也可以开垂直同步
 
-// 彩色清屏（准确说叫颜色填充）
-void FillScreen(Color c);
-// 速度更快的memset清屏，只支持黑色，数组全填充成0
-void ClearScreen(void);
