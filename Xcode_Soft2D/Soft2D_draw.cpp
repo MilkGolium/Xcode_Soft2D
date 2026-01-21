@@ -30,17 +30,17 @@ void DrawPixel(int x, int y, Color c) {
 }
 
 // Vector2版 画点函数
-void DrawPixelV(Vector2 position, Color c) {
+// 注意：Vector2 类型已经在头文件中定义，不在此文件中。
+void DrawPixelV(Vector2 pos, Color c) {
     // 边界检查
-    if (position.x < 0 || position.x >= window_width_sdl || position.y < 0 || position.y >= window_height_sdl) {
+    if (pos.x < 0 || pos.x >= window_width_sdl || pos.y < 0 || pos.y >= window_height_sdl) {
         return;
     }
     // 将 Color 结构体打包并写入，这种写法对于 0xFF0000FF 这种 RGBA 格式非常直接
-    pixels[position.y * window_width_sdl + position.x] = ((uint32_t)c.r << 24) | ((uint32_t)c.g << 16) | ((uint32_t)c.b << 8) | (uint32_t)c.a;
+    pixels[pos.y * window_width_sdl + pos.x] = ((uint32_t)c.r << 24) | ((uint32_t)c.g << 16) | ((uint32_t)c.b << 8) | (uint32_t)c.a;
 }
 
 // 画水平线：因为内存连续，所以是效率之王。绘制实心填充图形使用这个。
-// 注意：未来要解耦，绘图函数要依赖于DrawPixel一个函数，不要和底层直接沟通！
 void DrawHLine(int x1, int x2, int y, Color c) {
     if (y < 0 || y >= window_height_sdl) return;
     
