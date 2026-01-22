@@ -92,7 +92,21 @@ void DrawLine(int x1, int y1, int x2, int y2, Color c) {
 }
 
 // Vector2 Bresenham画任意线
-;
+void DrawLineV(Vector2 dot1, Vector2 dot2, Color c) {
+    int dx = abs(dot2.x - dot1.x);
+    int dy = -abs(dot2.y - dot1.y);
+    int sx = dot1.x < dot2.x ? 1 : -1;
+    int sy = dot1.y < dot2.y ? 1 : -1;
+    int err = dx + dy, e2;
+
+    while (1) {
+        DrawPixel(dot1.x, dot1.y, c);
+        if (dot1.x == dot2.x && dot1.y == dot2.y) break;
+        e2 = 2 * err;
+        if (e2 >= dy) { err += dy; dot1.x += sx; }
+        if (e2 <= dx) { err += dx; dot1.y += sy; }
+    }
+}
 
 // 实心矩形
 void DrawFilledRect(int x, int y, int w, int h, Color c) {
@@ -102,6 +116,11 @@ void DrawFilledRect(int x, int y, int w, int h, Color c) {
 }
 
 // Vector2 实心矩形
+void DrawFilledRectV(Vector2 pos, int w, int h, Color c) {
+    for (int i = 0; i < h; i++) {
+        DrawHLine(pos.x, pos.x + w - 1, pos.y + i, c);
+    }
+}
 
 // 实心圆
 void DrawFilledCircle(int centerX, int centerY, int radius, Color c) {
@@ -129,7 +148,29 @@ void DrawFilledCircle(int centerX, int centerY, int radius, Color c) {
 }
 
 // Vector2 实心圆
-;
+void DrawFilledCircleV(Vector2 center, int radius, Color c) {
+    int x = 0;
+    int y = radius;
+    int d = 3 - 2 * radius;
+
+    auto drawSymLines = [&](int cx, int cy, int x, int y, Color c) {
+        DrawHLine(cx - x, cx + x, cy + y, c); // 下部水平线
+        DrawHLine(cx - x, cx + x, cy - y, c); // 上部水平线
+        DrawHLine(cx - y, cx + y, cy + x, c); // 中下部水平线
+        DrawHLine(cx - y, cx + y, cy - x, c); // 中上部水平线
+    };
+
+    while (y >= x) {
+        drawSymLines(center.x, center.y, x, y, c);
+        x++;
+        if (d > 0) {
+            y--;
+            d = d + 4 * (x - y) + 10;
+        } else {
+            d = d + 4 * x + 6;
+        }
+    }
+}
 
 // 空心矩形
 void DrawRect(int x, int y, int w, int h, Color c) {
@@ -146,7 +187,18 @@ void DrawRect(int x, int y, int w, int h, Color c) {
 }
 
 // Vector2 空心矩形
-;
+void DrawRectV(Vector2 pos, int w, int h, Color c) {
+    if (w <= 0 || h <= 0) return; // 宽度或高度为0或负数则不画
+
+    // 绘制上下两条水平线
+    DrawHLine(pos.x, pos.x + w - 1, pos.y, c);           // 上边
+    DrawHLine(pos.x, pos.x + w - 1, pos.y + h - 1, c);   // 下边
+
+    // 绘制左右两条垂直线 (注意：y的范围需要避开已经画过的角点，或者让DrawVLine处理重叠)
+    // 为了简单且不重复画角点，我们让垂直线从y+1到y+h-2
+    DrawVLine(pos.x, pos.y + 1, pos.y + h - 2, c);       // 左边
+    DrawVLine(pos.x + w - 1, pos.y + 1, pos.y + h - 2, c); // 右边
+}
 
 // 空心圆
 void DrawCircle(int centerX, int centerY, int radius, Color c) {
@@ -180,7 +232,35 @@ void DrawCircle(int centerX, int centerY, int radius, Color c) {
 }
 
 // Vector2 空心圆
-;
+void DrawCircleV(Vector2 center, int radius, Color c) {
+    int x = 0;
+    int y = radius;
+    int d = 3 - 2 * radius; // 初始决策参数
+
+    // 辅助函数，在八个对称位置画点
+    auto drawCirclePoints = [&](int cx, int cy, int p_x, int p_y, Color color) {
+        DrawPixel(cx + p_x, cy + p_y, color);
+        DrawPixel(cx - p_x, cy + p_y, color);
+        DrawPixel(cx + p_x, cy - p_y, color);
+        DrawPixel(cx - p_x, cy - p_y, color);
+        DrawPixel(cx + p_y, cy + p_x, color);
+        DrawPixel(cx - p_y, cy + p_x, color);
+        DrawPixel(cx + p_y, cy - p_x, color);
+        DrawPixel(cx - p_y, cy - p_x, color);
+    };
+
+    while (y >= x) {
+        drawCirclePoints(center.x, center.y, x, y, c);
+        
+        if (d > 0) {
+            y--;
+            d = d + 4 * (x - y) + 10;
+        } else {
+            d = d + 4 * x + 6;
+        }
+        x++; // x 每次迭代都增加
+    }
+}
 
 // 彩色清屏
 void FillScreen(Color c) {

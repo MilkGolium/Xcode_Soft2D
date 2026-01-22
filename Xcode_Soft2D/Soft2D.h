@@ -44,16 +44,22 @@ typedef struct {
 
 // 画点函数
 void DrawPixel(int x, int y, Color c);
+void DrawPixelV(Vector2 pos, Color c);
 // Bresenham画线函数
 void DrawLine(int x1, int y1, int x2, int y2, Color c);
+void DrawLineV(Vector2 dot1, Vector2 dot2, Color c);
 // 实心矩形
 void DrawFilledRect(int x, int y, int w, int h, Color c);
+void DrawFilledRectV(Vector2 pos, int w, int h, Color c);
 // 实心圆
 void DrawFilledCircle(int centerX, int centerY, int radius, Color c);
+void DrawFilledCircleV(Vector2 center, int radius, Color c);
 // 空心矩形
 void DrawRect(int x, int y, int w, int h, Color c);
+void DrawRectV(Vector2 pos, int w, int h, Color c);
 // 空心圆
 void DrawCircle(int centerX, int centerY, int radius, Color c);
+void DrawCircleV(Vector2 center, int radius, Color c);
 // 彩色清屏（准确说叫颜色填充）
 void FillScreen(Color c);
 // 速度更快的memset清屏，只支持黑色，数组全填充成0
