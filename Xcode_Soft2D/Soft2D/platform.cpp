@@ -60,7 +60,7 @@ void InitWindow(int window_width, int window_height, const char *window_name){
 }
 
 // 渲染（一帧结束的时候使用）
-void Rend(void){
+void RenderFrame(void){
     // 将内存数据上传到显卡的纹理中，Pitch 是每一行数据的字节数 (window_width_sdl * 4)
     SDL_UpdateTexture(texture, NULL, pixels.data(), window_width_sdl * sizeof(uint32_t));
 

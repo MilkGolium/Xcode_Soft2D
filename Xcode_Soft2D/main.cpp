@@ -9,7 +9,7 @@ int main(void) {
         ClearScreen();
         // Draw here
         DrawCircleV(pos, 30, {255, 255, 255, 255});
-        Rend();
+        RenderFrame();
     }
     CleanUp();
     return 0;
