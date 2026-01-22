@@ -27,7 +27,7 @@ extern int window_width_sdl, window_height_sdl;
 extern std::vector<uint32_t> pixels;
 void InitWindow(int window_width, int window_height, const char *window_name);
 void Rend(void);
-bool GameShouldQuit(void);
+bool GameShouldRunning(void);
 void CleanUp(void);
 
 // Draw ==============================================================================

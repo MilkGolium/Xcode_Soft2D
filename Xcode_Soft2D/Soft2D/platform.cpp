@@ -71,7 +71,7 @@ void Rend(void){
 }
 
 // 处理退出游戏主循环的条件
-bool GameShouldQuit(void){
+bool GameShouldRunning(void){
     // 处理退出请求
     while (SDL_PollEvent(&event)) {
         if (event.type == SDL_EVENT_QUIT) return false;

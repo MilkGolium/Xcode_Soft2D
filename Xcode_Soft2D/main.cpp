@@ -4,11 +4,11 @@ int main(void) {
     InitWindow(640, 480, "Window name");
     InitEngineTime();
     Vector2 pos = {50, 100};
-    while (GameShouldQuit()) {
+    while (GameShouldRunning()) {
         UpdateDeltaTime();
-        // Draw here
-        Draw
         ClearScreen();
+        // Draw here
+        DrawCircleV(pos, 30, {255, 255, 255, 255});
         Rend();
     }
     CleanUp();
